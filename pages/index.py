@@ -16,17 +16,14 @@ column1 = dbc.Col(
         dcc.Markdown(
             """
         
-            ## Your Value Proposition
+            ## Predict Your Next Franchise QB
+            
+            #### NFL QB Predictor uses basic college statistics and machine learning to give you data-driven advice when envaluating the potential of college quarterbacks
 
-            Emphasize how the app will benefit users. Don't emphasize the underlying technology.
-
-            ✅ RUN is a running app that adapts to your fitness levels and designs personalized workouts to help you improve your running.
-
-            ❌ RUN is the only intelligent running app that uses sophisticated deep neural net machine learning to make your run smarter because we believe in ML driven workouts.
-
+            ...
             """
         ),
-        dcc.Link(dbc.Button('Your Call To Action', color='primary'), href='/predictions')
+        dcc.Link(dbc.Button('Predict', color='primary'), href='/predictions')
     ],
     md=4,
 )
@@ -37,8 +34,8 @@ fig = px.scatter(gapminder.query("year==2007"), x="gdpPercap", y="lifeExp", size
 
 column2 = dbc.Col(
     [
-        dcc.Graph(figure=fig),
-    ]
+        html.Img(src='assets/qb_image.jpg', className='img-fluid'),
+    ],
 )
 
 layout = dbc.Row([column1, column2])
